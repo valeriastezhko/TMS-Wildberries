@@ -1,0 +1,27 @@
+.swiper {
+  padding-top: 10px;
+  background-color: $main-color;
+
+  &-wrapper {
+    max-width: 1170px;
+  }
+}
+
+.swiper-slide__image {
+  max-height: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-pagination-bullet {
+  background-color: $black;
+  border: $black-border-1px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: $black;
+}

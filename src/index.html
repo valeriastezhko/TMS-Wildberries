@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TMS-Wildberries</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./styles/style.scss" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="container">
+        <nav class="header-navigation">
+          <h5 class="header__title">Wildberries</h5>
+          <form class="header-form">
+            <input
+              class="header-form__search"
+              id="header__search"
+              placeholder="Search..."
+            />
+            <button class="header-form__submit" type="submit"></button>
+          </form>
+
+          <button class="header__cart">
+            <ul class="cart-list">
+              <span class="cart-total"> </span>
+            </ul>
+          </button>
+        </nav>
+      </div>
+    </header>
+    <section class="swiper">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img class="swiper-slide__image" src="./assets/images/sw1.JPG" />
+          </div>
+          <div class="swiper-slide">
+            <img class="swiper-slide__image" src="./assets/images/sw2.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img class="swiper-slide__image" src="./assets/images/sw3.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img class="swiper-slide__image" src="./assets/images/sw4.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img class="swiper-slide__image" src="./assets/images/sw5.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img class="swiper-slide__image" src="./assets/images/sw6.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img class="swiper-slide__image" src="./assets/images/sw7.jpg" />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+    <section class="bestsellers">
+      <div class="container">
+        <h3 class="bestsellers__title">bestsellers</h3>
+        <div class="product-container" id="product-container"></div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="./index.js" type="module"></script>
+  </body>
+</html>

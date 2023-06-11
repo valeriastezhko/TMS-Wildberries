@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,500;1,700;1,900&display=swap");
+@import "_variables.scss";
+@import "header.scss";
+@import "swiper.scss";
+@import "bestsellers.scss";
+@import "modalWindow.scss";
+@import "cart.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto";
+  color: $black;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  @media (max-width: 1170px) {
+    padding: 0 20px;
+  }
+}
+
+button {
+  cursor: pointer;
+}
