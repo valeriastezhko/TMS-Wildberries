@@ -40,18 +40,4 @@
       box-shadow: 0 0 0 0.25rem rgb(23, 23, 24, 0.3);
     }
   }
-
-  &__submit {
-    width: 25px;
-    height: 25px;
-    padding: 15px;
-    background-image: url("../assets/images/search.png");
-    background-size: cover;
-    border: $black-border-1px;
-    border-radius: 50%;
-
-    &:active {
-      background-color: rgb(206, 192, 181);
-    }
-  }
 }

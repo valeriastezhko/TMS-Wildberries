@@ -33,3 +33,28 @@ export const setDiscountPercent = () => {
     percentElement.textContent = `-${discountPercent}%`;
   });
 };
+
+export const getSearch = () => {
+  const search = document
+    .getElementById("header__search")
+    .value.trim()
+    .toLowerCase();
+  const cards = document.querySelectorAll(".product-card");
+
+  cards.forEach((element) => {
+    const title = element
+      .querySelector(".product-card__title")
+      .textContent.toLowerCase();
+
+    if (search === "") {
+      element.style.display = "block";
+    } else if (!title.includes(search)) {
+      element.style.display = "none";
+    }
+  });
+};
+
+export const hideAdvertising = () => {
+  const advertising = document.querySelector(".swiper");
+  advertising.style.display = "none";
+};

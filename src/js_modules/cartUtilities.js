@@ -1,3 +1,5 @@
+import { saveCartToLocalStorage } from "./localStorage";
+
 export const addToCart = (id, title, price) => {
   const cartContainer = document.querySelector(".header__cart");
   const cartList = cartContainer.querySelector(".cart-list");
@@ -8,27 +10,10 @@ export const addToCart = (id, title, price) => {
     const quantity = parseInt(quantityElement.textContent);
     quantityElement.textContent = `${quantity + 1} pcs`;
   } else {
-    const listItem = document.createElement("li");
-    listItem.setAttribute("id", id);
-
-    const itemTitle = document.createElement("span");
-    itemTitle.textContent = title;
-    itemTitle.classList.add("cart-item__title");
-    listItem.appendChild(itemTitle);
-
-    const itemQuantity = document.createElement("span");
-    itemQuantity.textContent = "1 pcs";
-    itemQuantity.classList.add("cart-item__quantity");
-    listItem.appendChild(itemQuantity);
-
-    cartList.appendChild(listItem);
-
-    const itemPrice = document.createElement("span");
-    itemPrice.textContent = `${price} byn.`;
-    itemPrice.classList.add("cart-item__price");
-    listItem.appendChild(itemPrice);
+    createCartLayout(id, title, price);
   }
   updateCartTotal();
+  saveCartToLocalStorage();
 };
 
 export const updateCartTotal = () => {
@@ -69,6 +54,8 @@ export const clearCart = () => {
     item.remove();
   });
 
+  localStorage.removeItem("cart");
+
   updateCartTotal();
 };
 
@@ -86,4 +73,29 @@ export const showCart = () => {
   }
 
   cartList.classList.toggle("show");
+};
+
+export const createCartLayout = (id, title, price) => {
+  const cartContainer = document.querySelector(".header__cart");
+  const cartList = cartContainer.querySelector(".cart-list");
+
+  const listItem = document.createElement("li");
+  listItem.setAttribute("id", id);
+
+  const itemTitle = document.createElement("span");
+  itemTitle.textContent = title;
+  itemTitle.classList.add("cart-item__title");
+  listItem.appendChild(itemTitle);
+
+  const itemQuantity = document.createElement("span");
+  itemQuantity.textContent = "1 pcs";
+  itemQuantity.classList.add("cart-item__quantity");
+  listItem.appendChild(itemQuantity);
+
+  const itemPrice = document.createElement("span");
+  itemPrice.textContent = `${price} byn.`;
+  itemPrice.classList.add("cart-item__price");
+  listItem.appendChild(itemPrice);
+
+  cartList.appendChild(listItem);
 };
